@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script> <!-- Inclusion du fichier JavaScript -->
-    <title>Vérifier une année bisextile</title>    
+    <title>Job 4</title>    
 </head>
 <body>
     <h2>Vérification de l'année bisextile</h2>

@@ -1,0 +1,15 @@
+/* Styles de base */
+body {
+    transition: background-color 0.5s, color 0.5s;
+    color: blue;
+    background-color: red;
+}
+
+/* Styles appliqués lorsque le code Konami est activé */
+.konami-mode {
+    background-color: #2D2D2D; /* Couleur de fond de La Plateforme_ */
+    color: #FFFFFF; /* Couleur du texte de La Plateforme_ */
+    font-family: Arial, sans-serif; /* Police de La Plateforme_ */
+    text-align: center; /* Alignement du texte */
+    padding: 20px; /* Padding pour un meilleur espacement */
+}

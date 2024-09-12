@@ -1,0 +1,36 @@
+/* Styles de base pour le plateau de jeu */
+#taquin {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
+    border: 2px solid black;
+}
+
+.tile {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.empty {
+    background-color: #f1f1f1;
+    border: none;
+}
+
+#message {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#restartButton {
+    display: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

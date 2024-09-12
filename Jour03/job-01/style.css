@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+}
+
+h1 {
+    color: #333;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.rainbowPiece {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    cursor: move;
+}
+
+#resultMessage {
+    font-size: 20px;
+    font-weight: bold;
+}

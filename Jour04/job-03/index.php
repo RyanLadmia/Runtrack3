@@ -24,6 +24,7 @@
             <option value="Fire">Fire</option>
             <option value="Water">Water</option>
             <option value="Flying">Flying</option>
+            <option value="Ground">Ground</option>
             <!-- Ajoute d'autres types si nécessaire -->
         </select><br><br>
         

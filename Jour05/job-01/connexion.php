@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Job 1</title>
 </head>
 <body>
@@ -12,10 +14,12 @@
 
     <form>
         <label for="email">E-mail</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+        <input type="email" id="email" name="email" required><br>
+        <span class="error" id="loginEmailError"></span><br><br>
 
         <label for="password">Mot de passe</label><br>
         <input type="password" id="password" name="password" required><br><br>
+        <span class="error" id="loginPasswordError"></span><br><br>
 
         <input type="submit" id="connect" value="Se connecter">
     </form>

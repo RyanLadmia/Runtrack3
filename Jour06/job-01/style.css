@@ -1,0 +1,35 @@
+body {
+    background-color: #e9ecef;
+}
+
+.side-bar {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.reboot-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.sidebar-right {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.progress-bar-custom {
+    background-color: #ffc107;
+    height: 20px;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+li{
+    list-style-type: none;
+}
+.liste-group-item :hover{
+    background-color: blue;
+}

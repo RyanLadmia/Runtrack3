@@ -22,14 +22,17 @@ body {
     background-color: #ffc107;
     height: 20px;
 }
+
 h1{
     display: flex;
     justify-content: center;
     padding: 5px;
 }
+
 li{
     list-style-type: none;
 }
+
 .liste-group-item :hover{
     background-color: blue;
 }

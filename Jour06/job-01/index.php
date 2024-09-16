@@ -91,28 +91,35 @@
                     <div class="progress-bar progress-bar-custom" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
                 </div>
             </div>
-        </div>
+        </div><br>
 
         <!-- Formulaire -->
         <div class="row mt-4">
             <div class="col-md-6 offset-md-3">
+            <h5>Recevez votre copie gratuite d'internet 2!</h5>
                 <form>
                     <div class="mb-3">
-                        <label for="login" class="form-label">Login</label>
-                        <input type="text" class="form-control" id="login" placeholder="@">
+                        <input type="text" class="form-control" id="login" placeholder="@ Login">
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Mot de Passe</label>
-                        <input type="password" class="form-control" id="password" placeholder="@example.com">
+                        <input type="password" class="form-control" id="password" placeholder="Mot de passe">
                     </div>
                     <div class="mb-3">
                         <label for="url" class="form-label">URL des Internets 2 et 2.1 Beta</label>
-                        <input type="url" class="form-control" id="url" value="https://l33t.lptf/dkweb/berlusconimkt/">
+                        <input type="url" class="form-control" id="url" placeholder="DogeCoin .00">
                     </div>
                     <div class="mb-3">
-                        <label for="crypto" class="form-label">DogeCoin</label>
-                        <input type="number" class="form-control" id="crypto" placeholder=".00">
+                        <input type="number" class="form-control" id="crypto" placeholder="https://133t.lptf/dkwb/berlusconimkt/">
                     </div>
+                    <div>
+                    <label for="email" class="form-label">Email adress</label>
+                    <input type="email" class="form-control" id="email">
+                    <caption>We'll never share your email with anyone else</caption>
+                    </div><br>
+                    <div>
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password">
+                    </div><br>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="checkmeout">
                         <label class="form-check-label" for="checkmeout">Check me out</label>

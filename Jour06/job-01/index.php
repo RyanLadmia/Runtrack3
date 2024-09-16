@@ -69,16 +69,16 @@
             <!-- Colonne de droite (liste) -->
             <div class="col-md-3 sidebar-right">
                 <ul class="list-group">
-                    <li class="list-group-item">Limbes</li>
-                    <li class="list-group-item">Luxure</li>
-                    <li class="list-group-item">Gourmandise</li>
-                    <li class="list-group-item">Avarice</li>
-                    <li class="list-group-item">Colère</li>
-                    <li class="list-group-item">Hérésie</li>
-                    <li class="list-group-item">Violence</li>
-                    <li class="list-group-item">Ruse et Tromperie</li>
-                    <li class="list-group-item">Trahison</li>
-                    <li class="list-group-item">Internet Explorer</li>
+                    <li class="list-group-item" id="baba">Limbes</li>
+                    <li class="list-group-item" id="baba">Luxure</li>
+                    <li class="list-group-item" id="baba">Gourmandise</li>
+                    <li class="list-group-item" id="baba">Avarice</li>
+                    <li class="list-group-item" id="baba">Colère</li>
+                    <li class="list-group-item" id="baba">Hérésie</li>
+                    <li class="list-group-item" id="baba">Violence</li>
+                    <li class="list-group-item" id="baba">Ruse et Tromperie</li>
+                    <li class="list-group-item" id="baba">Trahison</li>
+                    <li class="list-group-item" id="baba">Internet Explorer</li>
                 </ul>
             </div>
         </div>

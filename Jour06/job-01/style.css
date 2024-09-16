@@ -33,11 +33,10 @@ li{
     list-style-type: none;
 }
 
-.liste-group-item :hover{
-    background-color: blue;
-}
-
 #ava{
     background-color: rgb(243, 239, 255);
     padding: 15px;
+}
+#baba:hover{
+    background-color: rgb(56, 108, 252);
 }

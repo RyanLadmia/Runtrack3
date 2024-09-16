@@ -121,12 +121,32 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="password" placeholder="Mot de passe">
+                            <div class="input-group-append">
+                                <span class="input-group-text">@exemple.com</span>
+                            </div>
+                        </div>
                     </div>
                     <div class="mb-3">
-                        <label for="url" class="form-label">URL des Internets 2 et 2.1 Beta</label>
-                        <input type="url" class="form-control" id="url" placeholder="DogeCoin .00"><br>
-                        <input type="url" class="form-control" id="url" placeholder="https://133t.lptf/dkwb/berlusconimkt/">
+                        <label for="crypto" class="form-label">URL des Internets 2 et 2.1 Beta</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">DogeCoin</span>
+                            </div>
+                            <input type="text" class="form-control" id="crypto">
+                            <div class="input-group-append">
+                                <span class="input-group-text">.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">https://133t.lptf/dkwb/berlusconimkt/</span>
+                            </div>
+                            <input type="text" class="form-control" id="url">
+                        </div>
                     </div>
                 </form>
             </div>

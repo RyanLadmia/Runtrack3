@@ -113,7 +113,12 @@
                 <h5>Recevez votre copie gratuite d'internet 2!</h5>
                 <form>
                     <div class="mb-3">
-                        <input type="text" class="form-control" id="login" placeholder="@ Login">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">@</span>
+                            </div>
+                            <input type="text" class="form-control" id="login" placeholder="Login">
+                        </div>
                     </div>
                     <div class="mb-3">
                         <input type="password" class="form-control" id="password" placeholder="Mot de passe">
@@ -146,6 +151,8 @@
                 </form>
             </div>
         </div>
-    </div><br>
+    </div><br> 
+</div>
+
 </body>
 </html>

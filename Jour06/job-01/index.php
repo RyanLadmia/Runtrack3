@@ -47,7 +47,7 @@
             </div>
 
             <!-- Colonne du milieu (contenu principal) -->
-            <div class="col-md-6">
+            <div class="col-md-6" id="ava">
                 
                 <h2>Bonjour, monde!</h2>
                 <p>Il existe plusieurs visions du terme :</p>

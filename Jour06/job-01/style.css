@@ -36,3 +36,8 @@ li{
 .liste-group-item :hover{
     background-color: blue;
 }
+
+#ava{
+    background-color: rgb(243, 239, 255);
+    padding: 15px;
+}

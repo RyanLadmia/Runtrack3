@@ -45,3 +45,53 @@ li{
 #fizz{
     margin-left: 170px;
 }
+
+@media screen and (max-width: 1200px) {
+    body {
+        background-color: #e9ecef;
+    }
+    
+    .side-bar {
+        background-color: #f8f9fa;
+        padding: 20px;
+    }
+    
+    .reboot-btn {
+        background-color: #dc3545;
+        color: white;
+    }
+    
+    .sidebar-right {
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .progress-bar-custom {
+        background-color: #ffc107;
+        height: 20px;
+    }
+    
+    h1{
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+    }
+    
+    li{
+        list-style-type: none;
+    }
+    
+    #ava{
+        background-color: rgb(243, 239, 255);
+        padding: 0px;
+    }
+    
+    #baba:hover{
+        background-color: rgb(56, 108, 252);
+    }
+    
+    #fizz{
+        margin-left: 0px;
+    }
+  }

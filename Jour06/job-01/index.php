@@ -41,7 +41,7 @@
             <!-- Colonne de gauche (image et description) -->
             <div class="col-md-3 side-bar">
                 <h4>Un Papillon</h4>
-                <img src="https://via.placeholder.com/150" alt="Papillon" class="img-fluid">
+                <img src="papillon.jpg" alt="Papillon" class="img-fluid">
                 <p>Un papillon, c'est un peu comme une chenille, mais avec des ailes. Ne pas ingérer.</p>
                 <button class="btn btn-primary w-100">Commander votre propre papillon</button>
             </div>
@@ -128,7 +128,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div><br>
 
     <!-- Lien vers Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

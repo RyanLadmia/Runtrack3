@@ -50,7 +50,6 @@
 
             <!-- Colonne du milieu (contenu principal) -->
             <div class="col-md-6" id="ava">
-                
                 <h2>Bonjour, monde!</h2>
                 <p>Il existe plusieurs visions du terme :</p>
                 <ul>
@@ -61,9 +60,21 @@
                 <button class="btn reboot-btn">Rebooter le Monde</button>
                 <nav aria-label="Page navigation example" class="mt-3">
                     <ul class="pagination justify-content-center">
+                        <!-- Double flèche pour aller à la première page -->
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="First">
+                                <span aria-hidden="true">&laquo;&laquo;</span>
+                            </a>
+                        </li>
                         <li class="page-item"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <!-- Double flèche pour aller à la dernière page -->
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Last">
+                                <span aria-hidden="true">&raquo;&raquo;</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -95,10 +106,11 @@
             </div>
         </div><br>
 
-        <!-- Formulaire -->
+        <!-- Disposition gauche-droite du formulaire et email -->
         <div class="row mt-4">
-            <div class="col-md-6 offset-md-3">
-            <h5>Recevez votre copie gratuite d'internet 2!</h5>
+            <!-- Colonne de gauche (réduite à la moitié de la fenêtre) -->
+            <div class="col-md-6">
+                <h5>Recevez votre copie gratuite d'internet 2!</h5>
                 <form>
                     <div class="mb-3">
                         <input type="text" class="form-control" id="login" placeholder="@ Login">
@@ -108,15 +120,19 @@
                     </div>
                     <div class="mb-3">
                         <label for="url" class="form-label">URL des Internets 2 et 2.1 Beta</label>
-                        <input type="url" class="form-control" id="url" placeholder="DogeCoin .00">
+                        <input type="url" class="form-control" id="url" placeholder="DogeCoin .00"><br>
+                        <input type="url" class="form-control" id="url" placeholder="https://133t.lptf/dkwb/berlusconimkt/">
                     </div>
+                </form>
+            </div>
+
+            <!-- Colonne de droite (inchangée) -->
+            <div class="col-md-4" id="fizz">
+                <form>
                     <div class="mb-3">
-                        <input type="number" class="form-control" id="crypto" placeholder="https://133t.lptf/dkwb/berlusconimkt/">
-                    </div>
-                    <div>
-                    <label for="email" class="form-label">Email adress</label>
-                    <input type="email" class="form-control" id="email">
-                    <caption>We'll never share your email with anyone else</caption>
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email">
+                        <caption>We'll never share your email with anyone else.</caption>
                     </div><br>
                     <div>
                         <label for="password" class="form-label">Password</label>
@@ -125,7 +141,7 @@
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="checkmeout">
                         <label class="form-check-label" for="checkmeout">Check me out</label>
-                    </div>
+                    </div><br>
                     <button type="submit" class="btn btn-primary w-100">Submit</button>
                 </form>
             </div>

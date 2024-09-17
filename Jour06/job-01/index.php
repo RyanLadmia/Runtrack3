@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Lien vers Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lien vers Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Lien vers le fichier CSS personnalisé -->
     <link rel="stylesheet" href="style.css">
     <style>
@@ -26,11 +28,11 @@
             background: none;
             padding: 0 10px;
             cursor: pointer;
-            font-size: 1.5rem;
-            color: #007bff;
+            font-size: 2rem;
+            color: black;
         }
         .progress-control button:hover {
-            color: #0056b3;
+            color: #007bff;
         }
     </style>
 </head>
@@ -86,7 +88,7 @@
                         <!-- Double flèche pour aller à la première page -->
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="First">
-                                <span aria-hidden="true">&laquo;&laquo;</span>
+                                <i class="bi bi-chevron-double-left"></i>
                             </a>
                         </li>
                         <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -95,7 +97,7 @@
                         <!-- Double flèche pour aller à la dernière page -->
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Last">
-                                <span aria-hidden="true">&raquo;&raquo;</span>
+                                <i class="bi bi-chevron-double-right"></i>
                             </a>
                         </li>
                     </ul>
@@ -126,7 +128,7 @@
                 <div class="progress-container">
                     <!-- Bouton flèche gauche -->
                     <button id="decreaseButton" class="progress-control">
-                        <i class="bi bi-arrow-left-circle"></i>
+                        <i class="bi bi-arrow-bar-left"></i>
                     </button>
                     
                     <!-- Barre de progression réduite -->
@@ -136,7 +138,7 @@
 
                     <!-- Bouton flèche droite -->
                     <button id="increaseButton" class="progress-control">
-                        <i class="bi bi-arrow-right-circle"></i>
+                        <i class="bi bi-arrow-bar-right"></i>
                     </button>
                 </div>
             </div>
@@ -149,7 +151,6 @@
                 <h5>Recevez votre copie gratuite d'internet 2!</h5>
                 <form>
                     <div class="mb-3">
-                        <label for="login" class="form-label">Login</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">@</span>
@@ -158,7 +159,6 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Mot de passe</label>
                         <div class="input-group">
                             <input type="password" class="form-control" id="password" placeholder="Mot de passe">
                             <div class="input-group-append">
@@ -170,21 +170,20 @@
                         <label for="crypto" class="form-label">URL des Internets 2 et 2.1 Beta</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">.00</span>
-                            </div>
-                            <input type="text" class="form-control" id="crypto" placeholder="DogeCoin">
-                            <div class="input-group-append">
                                 <span class="input-group-text">DogeCoin</span>
+                            </div>
+                            <input type="text" class="form-control" id="crypto">
+                            <div class="input-group-append">
+                                <span class="input-group-text">.00</span>
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="url" class="form-label">URL</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">https://133t.lptf/dkwb/berlusconimkt/</span>
                             </div>
-                            <input type="text" class="form-control" id="url" placeholder="URL">
+                            <input type="text" class="form-control" id="url">
                         </div>
                     </div>
                 </form>

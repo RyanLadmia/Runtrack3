@@ -1,5 +1,5 @@
 body {
-    background-color: #e9ecef;
+    background-color: #cfcece;
 }
 
 .side-bar {
@@ -44,6 +44,14 @@ li{
 
 #fizz{
     margin-left: 170px;
+}
+
+#decrease{
+    background-image: url(fleche1.png);
+}
+
+#increase{
+    background-image: url(fleche2.png);
 }
 
 @media screen and (max-width: 1200px) {

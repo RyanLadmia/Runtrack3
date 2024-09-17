@@ -10,6 +10,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Lien vers le fichier CSS personnalisé -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        .progress-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .progress {
+            width: 60%; /* Réduire la longueur de la barre de progression */
+            margin: 0 10px; /* Espacement pour les flèches */
+        }
+        .progress-control button {
+            border: none;
+            background: none;
+            padding: 0 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #007bff;
+        }
+        .progress-control button:hover {
+            color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <!-- Barre de navigation -->
@@ -96,12 +119,25 @@
             </div>
         </div>
 
-        <!-- Barre de progression -->
+        <!-- Barre de progression avec boutons pour augmenter/diminuer -->
         <div class="row mt-4">
             <div class="col-12">
                 <h5>Installation de AI 9000</h5>
-                <div class="progress">
-                    <div class="progress-bar progress-bar-custom" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                <div class="progress-container">
+                    <!-- Bouton flèche gauche -->
+                    <button id="decreaseButton" class="progress-control">
+                        <i class="bi bi-arrow-left-circle"></i>
+                    </button>
+                    
+                    <!-- Barre de progression réduite -->
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-custom" role="progressbar" style="width: 70%;" id="progressBar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                    </div>
+
+                    <!-- Bouton flèche droite -->
+                    <button id="increaseButton" class="progress-control">
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </button>
                 </div>
             </div>
         </div><br>
@@ -113,6 +149,7 @@
                 <h5>Recevez votre copie gratuite d'internet 2!</h5>
                 <form>
                     <div class="mb-3">
+                        <label for="login" class="form-label">Login</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">@</span>
@@ -121,6 +158,7 @@
                         </div>
                     </div>
                     <div class="mb-3">
+                        <label for="password" class="form-label">Mot de passe</label>
                         <div class="input-group">
                             <input type="password" class="form-control" id="password" placeholder="Mot de passe">
                             <div class="input-group-append">
@@ -132,20 +170,21 @@
                         <label for="crypto" class="form-label">URL des Internets 2 et 2.1 Beta</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text">DogeCoin</span>
-                            </div>
-                            <input type="text" class="form-control" id="crypto">
-                            <div class="input-group-append">
                                 <span class="input-group-text">.00</span>
+                            </div>
+                            <input type="text" class="form-control" id="crypto" placeholder="DogeCoin">
+                            <div class="input-group-append">
+                                <span class="input-group-text">DogeCoin</span>
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
+                        <label for="url" class="form-label">URL</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">https://133t.lptf/dkwb/berlusconimkt/</span>
                             </div>
-                            <input type="text" class="form-control" id="url">
+                            <input type="text" class="form-control" id="url" placeholder="URL">
                         </div>
                     </div>
                 </form>
@@ -173,6 +212,30 @@
         </div>
     </div><br> 
 </div>
+
+<script>
+    document.getElementById('increaseButton').addEventListener('click', function() {
+        var progressBar = document.getElementById('progressBar');
+        var currentValue = parseInt(progressBar.getAttribute('aria-valuenow'));
+        if (currentValue < 100) {
+            currentValue += 10;
+            progressBar.style.width = currentValue + '%';
+            progressBar.setAttribute('aria-valuenow', currentValue);
+            progressBar.textContent = currentValue + '%';
+        }
+    });
+
+    document.getElementById('decreaseButton').addEventListener('click', function() {
+        var progressBar = document.getElementById('progressBar');
+        var currentValue = parseInt(progressBar.getAttribute('aria-valuenow'));
+        if (currentValue > 0) {
+            currentValue -= 10;
+            progressBar.style.width = currentValue + '%';
+            progressBar.setAttribute('aria-valuenow', currentValue);
+            progressBar.textContent = currentValue + '%';
+        }
+    });
+</script>
 
 </body>
 </html>

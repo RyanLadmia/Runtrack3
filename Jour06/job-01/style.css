@@ -23,6 +23,28 @@ body {
     height: 20px;
 }
 
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.progress {
+    width: 60%; /* Réduire la longueur de la barre de progression */
+    margin: 0 10px; /* Espacement pour les flèches */
+}
+.progress-control button {
+    border: none;
+    background: none;
+    padding: 0 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    color: black;
+}
+.progress-control button:hover {
+    color: #007bff;
+}
+
 h1{
     display: flex;
     justify-content: center;
@@ -52,6 +74,10 @@ li{
 
 #increase{
     background-image: url(fleche2.png);
+}
+
+#Install{
+    margin-left: 690px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -100,6 +126,9 @@ li{
     }
     
     #fizz{
+        margin-left: 0px;
+    }
+    #Install{
         margin-left: 0px;
     }
   }

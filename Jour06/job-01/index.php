@@ -8,33 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Lien vers Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Lien vers jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Lien vers Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Lien vers le fichier CSS personnalisé -->
     <link rel="stylesheet" href="style.css">
-    <style>
-        .progress-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        .progress {
-            width: 60%; /* Réduire la longueur de la barre de progression */
-            margin: 0 10px; /* Espacement pour les flèches */
-        }
-        .progress-control button {
-            border: none;
-            background: none;
-            padding: 0 10px;
-            cursor: pointer;
-            font-size: 2rem;
-            color: black;
-        }
-        .progress-control button:hover {
-            color: #007bff;
-        }
-    </style>
 </head>
 <body>
     <!-- Barre de navigation -->
@@ -47,7 +26,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                        <a class="nav-link active" id="accueilLink" href="#">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Units</a>
@@ -62,15 +41,17 @@
             </div>
         </div>
     </nav>
+    
     <h1>LaPlateforme_</h1>
+
     <div class="container mt-4">
         <div class="row">
             <!-- Colonne de gauche (image et description) -->
             <div class="col-md-3 side-bar">
                 <h4>Un Papillon</h4>
-                <img src="papillon.jpg" alt="Papillon" class="img-fluid">
+                <img src="papillon.jpg" alt="image d'un Papillon" class="img-fluid">
                 <p>Un papillon, c'est un peu comme une chenille, mais avec des ailes. Ne pas ingérer.</p>
-                <button class="btn btn-primary w-100">Commander votre propre papillon</button>
+                <button class="btn btn-primary w-100" id="orderButterflyBtn">Commander votre propre papillon</button>
             </div>
 
             <!-- Colonne du milieu (contenu principal) -->
@@ -85,7 +66,6 @@
                 <button class="btn reboot-btn">Rebooter le Monde</button>
                 <nav aria-label="Page navigation example" class="mt-3">
                     <ul class="pagination justify-content-center">
-                        <!-- Double flèche pour aller à la première page -->
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="First">
                                 <i class="bi bi-chevron-double-left"></i>
@@ -94,7 +74,6 @@
                         <li class="page-item"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <!-- Double flèche pour aller à la dernière page -->
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Last">
                                 <i class="bi bi-chevron-double-right"></i>
@@ -124,19 +103,14 @@
         <!-- Barre de progression avec boutons pour augmenter/diminuer -->
         <div class="row mt-4">
             <div class="col-12">
-                <h5>Installation de AI 9000</h5>
+                <h5 id="Install">Installation de AI 9000</h5>
                 <div class="progress-container">
-                    <!-- Bouton flèche gauche -->
                     <button id="decreaseButton" class="progress-control">
                         <i class="bi bi-arrow-bar-left"></i>
                     </button>
-                    
-                    <!-- Barre de progression réduite -->
                     <div class="progress">
                         <div class="progress-bar progress-bar-custom" role="progressbar" style="width: 70%;" id="progressBar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
                     </div>
-
-                    <!-- Bouton flèche droite -->
                     <button id="increaseButton" class="progress-control">
                         <i class="bi bi-arrow-bar-right"></i>
                     </button>
@@ -195,7 +169,7 @@
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
                         <input type="email" class="form-control" id="email">
-                        <caption>We'll never share your email with anyone else.</caption>
+                        <small>We'll never share your email with anyone else.</small>
                     </div><br>
                     <div>
                         <label for="password" class="form-label">Password</label>
@@ -205,36 +179,64 @@
                         <input type="checkbox" class="form-check-input" id="checkmeout">
                         <label class="form-check-label" for="checkmeout">Check me out</label>
                     </div><br>
-                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                    <button type="submit" class="btn btn-primary w-100">Submit</button><br><br>
                 </form>
             </div>
         </div>
-    </div><br> 
-</div>
+    </div>
 
-<script>
-    document.getElementById('increaseButton').addEventListener('click', function() {
-        var progressBar = document.getElementById('progressBar');
-        var currentValue = parseInt(progressBar.getAttribute('aria-valuenow'));
-        if (currentValue < 100) {
-            currentValue += 10;
-            progressBar.style.width = currentValue + '%';
-            progressBar.setAttribute('aria-valuenow', currentValue);
-            progressBar.textContent = currentValue + '%';
-        }
-    });
+    <!-- Modale de confirmation d'achat -->
+    <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="purchaseModalLabel">Confirmation d'achat</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Votre commande pour un papillon a été confirmée. Merci pour votre achat !
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    document.getElementById('decreaseButton').addEventListener('click', function() {
-        var progressBar = document.getElementById('progressBar');
-        var currentValue = parseInt(progressBar.getAttribute('aria-valuenow'));
-        if (currentValue > 0) {
-            currentValue -= 10;
-            progressBar.style.width = currentValue + '%';
-            progressBar.setAttribute('aria-valuenow', currentValue);
-            progressBar.textContent = currentValue + '%';
-        }
-    });
-</script>
+    <script>
+        // Utilisation de jQuery pour rediriger le lien "Accueil"
+        $('#accueilLink').on('click', function(e) {
+            e.preventDefault(); // Empêche le comportement par défaut
+            window.location.href = "https://laplateforme.io"; // Redirige vers La Plateforme
+        });
 
+        // Gestion de la barre de progression
+        document.getElementById('increaseButton').addEventListener('click', function() {
+            var progressBar = document.getElementById('progressBar');
+            var currentValue = parseInt(progressBar.getAttribute('aria-valuenow'));
+            if (currentValue < 100) {
+                currentValue += 10;
+                progressBar.style.width = currentValue + '%';
+                progressBar.setAttribute('aria-valuenow', currentValue);
+                progressBar.textContent = currentValue + '%';
+            }
+        });
+
+        document.getElementById('decreaseButton').addEventListener('click', function() {
+            var progressBar = document.getElementById('progressBar');
+            var currentValue = parseInt(progressBar.getAttribute('aria-valuenow'));
+            if (currentValue > 0) {
+                currentValue -= 10;
+                progressBar.style.width = currentValue + '%';
+                progressBar.setAttribute('aria-valuenow', currentValue);
+                progressBar.textContent = currentValue + '%';
+            }
+        });
+
+        // Gestion du bouton de commande du papillon pour afficher la modale
+        $('#orderButterflyBtn').on('click', function() {
+            $('#purchaseModal').modal('show'); // Affiche la modale
+        });
+    </script>
 </body>
 </html>

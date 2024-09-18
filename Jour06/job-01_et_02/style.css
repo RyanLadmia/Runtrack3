@@ -80,6 +80,13 @@ li{
     margin-left: 690px;
 }
 
+#citation{
+    padding: 20px;
+    margin: 15px;
+    font-size: medium;
+    line-height: 25px;
+}
+
 @media screen and (max-width: 1200px) {
     body {
         background-color: #cfcece;

@@ -241,16 +241,16 @@
 
 
         const quotes = [
-        "J'ai vu tant de choses que vous, humains, ne pourriez pas croire.\
-        Tous ces moments se perdront dans l\'oubli, comme les larmes dans la pluie.\
-        C\'est l\'heure de mourir.\
-        La lumière qui brûle deux fois plus fort brûle deux fois moins longtemps.\
+        "Blade Runner :<br><br>J'ai vu tant de choses que vous, humains, ne pourriez pas croire.\
+        Tous ces moments se perdront dans l\'oubli, comme les larmes dans la pluie.\<br>\
+        C\'est l\'heure de mourir.\<br>\
+        La lumière qui brûle deux fois plus fort brûle deux fois moins longtemps.\<br>\
         Qu'est-ce qu'une tortue de terre fait dans un désert?"
     ];
 
     document.querySelector('.reboot-btn').addEventListener('click', function() {
         const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-        document.getElementById('ava').innerHTML = `<h5>${randomQuote}</h5>`;
+        document.getElementById('ava').innerHTML = `<h5 id="citation">${randomQuote}</h5>`;
     });
     </script>
 </body>

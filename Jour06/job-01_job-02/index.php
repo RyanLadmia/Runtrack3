@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaPlateforme_</title>
+    <title>Job 1 et 2</title>
     <!-- Lien vers Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Lien vers Bootstrap JS -->
@@ -169,7 +169,7 @@
                 </form>
             </div>
 
-            <!-- Colonne de droite (inchangée) -->
+            <!-- Colonne de droite  -->
             <div class="col-md-4" id="fizz">
                 <form>
                     <div class="mb-3">
@@ -193,7 +193,7 @@
 
 
 
- <!-- Modale cachée (affichée lors de la combinaison de touches) -->
+ <!-- Modale cachée (affichée lors de la combinaison de touches d g c) -->
  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -377,16 +377,16 @@ keysPressed[e.key.toLowerCase()] = false;
 
 
 
-// Pagination
+// Pagination infernale 
 $(document).ready(function () {
 // Détection du clic sur un élément de pagination
 $('.pagination a').on('click', function (e) {
 e.preventDefault(); // Empêche le comportement par défaut des liens
 
 // Récupère le texte de la page cliquée
-var page = $(this).text().trim(); // Utilisation de .trim() pour éviter les espaces accidentels
+var page = $(this).text().trim();
 
-// Change le contenu du jumbotron en fonction de la page cliquée
+// Change le contenu du jumbotron en fonction de la page cliquée 
 if (page === "1") {
     $('#ava').html(`
         <h2>Bonjour, monde!</h2>
@@ -426,7 +426,7 @@ $(document).ready(function () {
                 $('#ava').html(`<h5 id="citation">${randomQuote}</h5>`);
             });
 
-            // Pagination
+            // Pagination infernale
             $('.pagination a').on('click', function (e) {
                 e.preventDefault(); // Empêche le comportement par défaut des liens
                 const page = $(this).text().trim();
@@ -458,7 +458,7 @@ $(document).ready(function () {
 
 
         $(document).ready(function () {
-    // Gestion des clics sur les flèches de pagination
+    // Gestion des clics sur les flèches de pagination infernale
     $('#firstPage').on('click', function (e) {
         e.preventDefault(); // Empêche le comportement par défaut du lien
         $('#ava').html(`

@@ -185,7 +185,7 @@
                         <input type="checkbox" class="form-check-input" id="checkmeout">
                         <label class="form-check-label" for="checkmeout">Check me out</label>
                     </div><br>
-                    <button type="submit" class="btn btn-primary w-100">Submit</button><br><br>
+                    <button type="submit" id="submitButton" class="btn btn-primary w-100">Submit</button><br><br>
                 </form>
             </div>
         </div>
@@ -504,6 +504,42 @@ $(document).ready(function () {
         }
     });
 });
+
+
+$(document).ready(function () {
+    // Fonction pour générer une couleur hexadécimale aléatoire
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    // Gestion de la soumission du formulaire
+    $('#submitButton').on('click', function (e) {
+        e.preventDefault(); // Empêche le comportement par défaut du bouton
+
+        // Récupère les valeurs des champs email et mot de passe
+        const email = $('#email').val();
+        const password = $('#password').val();
+
+        // Vérifie que les champs ne sont pas vides
+        if (email !== '' && password !== '') {
+            // Change aléatoirement la couleur du spinner
+            const randomColor = getRandomColor();
+            $('.progress-bar-custom').css('background-color', randomColor);
+
+            // Optionnel : affiche un message de confirmation ou une action supplémentaire
+            alert('Formulaire validé et couleur du spinner changée !');
+        } else {
+            // Affiche un message d'erreur si les champs sont vides
+            alert('Veuillez remplir tous les champs.');
+        }
+    });
+});
+
 
 
     </script>

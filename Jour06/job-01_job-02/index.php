@@ -15,6 +15,7 @@
     <!-- Lien vers le fichier CSS personnalisé -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Barre de navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -250,6 +251,15 @@
     </div>
 
 
+
+
+
+
+
+
+
+
+    
 
 
     <script>

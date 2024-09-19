@@ -84,6 +84,12 @@ li{
     line-height: 25px;
 }
 
+#conete{
+    background-color: rgb(243, 239, 255);;
+}
+
+
+
 @media screen and (max-width: 1200px) {
     body {
         background-color: #cfcece;

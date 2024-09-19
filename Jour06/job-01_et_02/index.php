@@ -42,28 +42,32 @@
         </div>
     </nav>
     
-    <h1>LaPlateforme_</h1>
+    <h1 class="text-center mt-4">LaPlateforme_</h1>
 
     <div class="container mt-4">
         <div class="row">
             <!-- Colonne de gauche (image et description) -->
-            <div class="col-md-3 side-bar">
-                <h4>Un Papillon</h4>
-                <img src="papillon.jpg" alt="image d'un Papillon" class="img-fluid">
-                <p>Un papillon, c'est un peu comme une chenille, mais avec des ailes. Ne pas ingérer.</p>
-                <button class="btn btn-primary w-100" id="orderButterflyBtn">Commander votre propre papillon</button>
+            <div class="col-md-3">
+                <div class="side-bar">
+                    <h4>Un Papillon</h4>
+                    <img src="papillon.jpg" alt="image d'un Papillon" class="img-fluid">
+                    <p>Un papillon, c'est un peu comme une chenille, mais avec des ailes. Ne pas ingérer.</p>
+                    <button class="btn btn-primary w-100" id="orderButterflyBtn">Commander votre propre papillon</button>
+                </div>
             </div>
 
             <!-- Colonne du milieu (contenu principal) -->
-            <div class="col-md-6" id="ava">
-                <h2>Bonjour, monde!</h2>
-                <p>Il existe plusieurs visions du terme :</p>
-                <ul>
-                    <li>Le monde est la matière, l'espace et les phénomènes qui nous sont accessibles par les sens, l'expérience ou la raison.</li>
-                    <li>Le sens le plus courant désigne notre planète, la Terre, avec ses habitants, et son environnement plus ou moins naturel.</li>
-                </ul><br>
-                <p>Le sens étendu désigne l'univers dans son ensemble.</p>
-                <button class="btn reboot-btn">Rebooter le Monde</button>
+            <div class="col-md-6" id="conete">
+                <div id="ava">
+                    <h2>Bonjour, monde!</h2>
+                    <p>Il existe plusieurs visions du terme :</p>
+                    <ul>
+                        <li>Le monde est la matière, l'espace et les phénomènes qui nous sont accessibles par les sens, l'expérience ou la raison.</li>
+                        <li>Le sens le plus courant désigne notre planète, la Terre, avec ses habitants, et son environnement plus ou moins naturel.</li>
+                    </ul><br>
+                    <p>Le sens étendu désigne l'univers dans son ensemble.</p>
+                    <button class="btn reboot-btn">Rebooter le Monde</button>
+                </div>
                 <nav aria-label="Page navigation example" class="mt-3">
                     <ul class="pagination justify-content-center">
                         <li class="page-item">
@@ -84,21 +88,23 @@
             </div>
 
             <!-- Colonne de droite (liste) -->
-            <div class="col-md-3 sidebar-right">
-                <ul class="list-group" id="listGroup">
-                    <li class="list-group-item">Limbes</li>
-                    <li class="list-group-item">Luxure</li>
-                    <li class="list-group-item">Gourmandise</li>
-                    <li class="list-group-item">Avarice</li>
-                    <li class="list-group-item">Colère</li>
-                    <li class="list-group-item">Hérésie</li>
-                    <li class="list-group-item">Violence</li>
-                    <li class="list-group-item">Ruse et Tromperie</li>
-                    <li class="list-group-item">Trahison</li>
-                    <li class="list-group-item">Internet Explorer</li>
-                </ul>
+            <div class="col-md-3">
+                <div class="sidebar-right">
+                    <ul class="list-group" id="listGroup">
+                        <li class="list-group-item">Limbes</li>
+                        <li class="list-group-item">Luxure</li>
+                        <li class="list-group-item">Gourmandise</li>
+                        <li class="list-group-item">Avarice</li>
+                        <li class="list-group-item">Colère</li>
+                        <li class="list-group-item">Hérésie</li>
+                        <li class="list-group-item">Violence</li>
+                        <li class="list-group-item">Ruse et Tromperie</li>
+                        <li class="list-group-item">Trahison</li>
+                        <li class="list-group-item">Internet Explorer</li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </div><br>
 
         <!-- Barre de progression avec boutons pour augmenter/diminuer -->
         <div class="row mt-4">
@@ -116,7 +122,7 @@
                     </button>
                 </div>
             </div>
-        </div><br>
+        </div><br><br>
 
         <!-- Disposition gauche-droite du formulaire et email -->
         <div class="row mt-4">
@@ -185,8 +191,10 @@
         </div>
     </div>
 
-    <!-- Modale cachée (affichée lors de la combinaison de touches) -->
-    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+
+
+ <!-- Modale cachée (affichée lors de la combinaison de touches) -->
+ <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -243,128 +251,209 @@
 
 
 
+
     <script>
         // Utilisation de jQuery pour rediriger le lien "Accueil"
-        $('#accueilLink').on('click', function(e) {
-            e.preventDefault(); // Empêche le comportement par défaut
-            window.location.href = "https://laplateforme.io"; // Redirige vers La Plateforme
-        });
+$('#accueilLink').on('click', function(e) {
+    e.preventDefault(); // Empêche le comportement par défaut
+    window.location.href = "https://laplateforme.io"; // Redirige vers La Plateforme
+});
 
-        // Gestion de la barre de progression
-        document.getElementById('increaseButton').addEventListener('click', function() {
-            var progressBar = document.getElementById('progressBar');
-            var currentValue = parseInt(progressBar.getAttribute('aria-valuenow'));
-            if (currentValue < 100) {
-                currentValue += 10;
-                progressBar.style.width = currentValue + '%';
-                progressBar.setAttribute('aria-valuenow', currentValue);
-                progressBar.textContent = currentValue + '%';
-            }
-        });
+// Gestion de la barre de progression
+document.getElementById('increaseButton').addEventListener('click', function() {
+    var progressBar = document.getElementById('progressBar');
+    var currentValue = parseInt(progressBar.getAttribute('aria-valuenow'));
+    if (currentValue < 100) {
+        currentValue += 10;
+        progressBar.style.width = currentValue + '%';
+        progressBar.setAttribute('aria-valuenow', currentValue);
+        progressBar.textContent = currentValue + '%';
+    }
+});
 
-        document.getElementById('decreaseButton').addEventListener('click', function() {
-            var progressBar = document.getElementById('progressBar');
-            var currentValue = parseInt(progressBar.getAttribute('aria-valuenow'));
-            if (currentValue > 0) {
-                currentValue -= 10;
-                progressBar.style.width = currentValue + '%';
-                progressBar.setAttribute('aria-valuenow', currentValue);
-                progressBar.textContent = currentValue + '%';
-            }
-        });
+document.getElementById('decreaseButton').addEventListener('click', function() {
+    var progressBar = document.getElementById('progressBar');
+    var currentValue = parseInt(progressBar.getAttribute('aria-valuenow'));
+    if (currentValue > 0) {
+        currentValue -= 10;
+        progressBar.style.width = currentValue + '%';
+        progressBar.setAttribute('aria-valuenow', currentValue);
+        progressBar.textContent = currentValue + '%';
+    }
+});
 
-        // Gestion du bouton de commande du papillon pour afficher la modale
-        $('#orderButterflyBtn').on('click', function() {
-            $('#purchaseModal').modal('show'); // Affiche la modale
-        });
-
-
-
-        const quotes = [
-        "Blade Runner :<br><br>J'ai vu tant de choses que vous, humains, ne pourriez pas croire.\
-        Tous ces moments se perdront dans l\'oubli, comme les larmes dans la pluie.\<br>\
-        C\'est l\'heure de mourir.\<br>\
-        La lumière qui brûle deux fois plus fort brûle deux fois moins longtemps.\<br>\
-        Qu'est-ce qu'une tortue de terre fait dans un désert?"
-    ];
-
-    document.querySelector('.reboot-btn').addEventListener('click', function() {
-        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-        document.getElementById('ava').innerHTML = `<h5 id="citation">${randomQuote}</h5>`;
-    });
-
-    // Fonction pour activer un élément de la liste à droite lorsqu'on clique dessus
-        $('#listGroup .list-group-item').on('click', function() {
-            $('#listGroup .list-group-item').removeClass('active');
-            $(this).addClass('active');
-        });
+// Gestion du bouton de commande du papillon pour afficher la modale
+$('#orderButterflyBtn').on('click', function() {
+    $('#purchaseModal').modal('show'); // Affiche la modale
+});
 
 
-        
 
-         // Fonction pour détecter la séquence de touches D, G, C
-         let sequence = [];
-        document.addEventListener('keydown', function(event) {
-            const key = event.key.toUpperCase();
-            sequence.push(key);
-            if (sequence.slice(-3).join('') === 'DGC') {
-                // Récupérer les informations du formulaire
-                const login = document.getElementById('login').value;
-                const password = document.getElementById('password').value;
-                const crypto = document.getElementById('crypto').value;
-                const url = document.getElementById('url').value;
+const quotes = [
+"Blade Runner :<br><br>J'ai vu tant de choses que vous, humains, ne pourriez pas croire.\
+Tous ces moments se perdront dans l\'oubli, comme les larmes dans la pluie.\<br>\
+C\'est l\'heure de mourir.\<br>\
+La lumière qui brûle deux fois plus fort brûle deux fois moins longtemps.\<br>\
+Qu'est-ce qu'une tortue de terre fait dans un désert?"
+];
 
-                // Afficher les informations dans la modale
-                document.getElementById('recapLogin').innerText = 'Login: ' + login;
-                document.getElementById('recapPassword').innerText = 'Mot de passe: ' + password;
-                document.getElementById('recapCrypto').innerText = 'DogeCoin: ' + crypto;
-                document.getElementById('recapUrl').innerText = 'URL: ' + url;
+document.querySelector('.reboot-btn').addEventListener('click', function() {
+const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+document.getElementById('ava').innerHTML = `<h5 id="citation">${randomQuote}</h5>`;
+});
 
-                // Afficher la modale Bootstrap
-                const infoModal = new bootstrap.Modal(document.getElementById('infoModal'));
-                infoModal.show();
-
-                // Réinitialiser la séquence
-                sequence = [];
-            }
-        });
+// Fonction pour activer un élément de la liste à droite lorsqu'on clique dessus
+$('#listGroup .list-group-item').on('click', function() {
+    $('#listGroup .list-group-item').removeClass('active');
+    $(this).addClass('active');
+});
 
 
-        // Variables pour suivre les touches pressées
+
+
+ // Fonction pour détecter la séquence de touches D, G, C
+ let sequence = [];
+document.addEventListener('keydown', function(event) {
+    const key = event.key.toUpperCase();
+    sequence.push(key);
+    if (sequence.slice(-3).join('') === 'DGC') {
+        // Récupérer les informations du formulaire
+        const login = document.getElementById('login').value;
+        const password = document.getElementById('password').value;
+        const crypto = document.getElementById('crypto').value;
+        const url = document.getElementById('url').value;
+
+        // Afficher les informations dans la modale
+        document.getElementById('recapLogin').innerText = 'Login: ' + login;
+        document.getElementById('recapPassword').innerText = 'Mot de passe: ' + password;
+        document.getElementById('recapCrypto').innerText = 'DogeCoin: ' + crypto;
+        document.getElementById('recapUrl').innerText = 'URL: ' + url;
+
+        // Afficher la modale Bootstrap
+        const infoModal = new bootstrap.Modal(document.getElementById('infoModal'));
+        infoModal.show();
+
+        // Réinitialiser la séquence
+        sequence = [];
+    }
+});
+
+
+// Variables pour suivre les touches pressées
 let keysPressed = {};
 
 // Détection des touches "D", "G" et "C"
 document.addEventListener("keydown", function (e) {
-    keysPressed[e.key.toLowerCase()] = true;
+keysPressed[e.key.toLowerCase()] = true;
 
-    // Vérifie si les touches D, G et C sont toutes pressées en même temps
-    if (keysPressed['d'] && keysPressed['g'] && keysPressed['c']) {
-        // Affiche la modale avec le récapitulatif du formulaire
-        let login = document.getElementById("login").value;
-        let password = document.getElementById("password").value;
-        let crypto = document.getElementById("crypto").value;
-        let url = document.getElementById("url").value;
-        let email = document.getElementById("email").value;
+// Vérifie si les touches D, G et C sont toutes pressées en même temps
+if (keysPressed['d'] && keysPressed['g'] && keysPressed['c']) {
+// Affiche la modale avec le récapitulatif du formulaire
+let login = document.getElementById("login").value;
+let password = document.getElementById("password").value;
+let crypto = document.getElementById("crypto").value;
+let url = document.getElementById("url").value;
+let email = document.getElementById("email").value;
 
-        let summaryContent = `
-            <strong>Login:</strong> ${login} <br>
-            <strong>Mot de passe:</strong> ${password} <br>
-            <strong>Cryptomonnaie:</strong> ${crypto} <br>
-            <strong>URL:</strong> ${url} <br>
-            <strong>Email:</strong> ${email} <br>
-        `;
-        
-        document.getElementById("formSummaryContent").innerHTML = summaryContent;
-        
-        let modal = new bootstrap.Modal(document.getElementById('formSummaryModal'));
-        modal.show();
-    }
+let summaryContent = `
+    <strong>Login:</strong> ${login} <br>
+    <strong>Mot de passe:</strong> ${password} <br>
+    <strong>Cryptomonnaie:</strong> ${crypto} <br>
+    <strong>URL:</strong> ${url} <br>
+    <strong>Email:</strong> ${email} <br>
+`;
+
+document.getElementById("formSummaryContent").innerHTML = summaryContent;
+
+let modal = new bootstrap.Modal(document.getElementById('formSummaryModal'));
+modal.show();
+}
 });
 
 // Réinitialisation des touches quand elles sont relâchées
 document.addEventListener("keyup", function (e) {
-    keysPressed[e.key.toLowerCase()] = false;
+keysPressed[e.key.toLowerCase()] = false;
 });
+
+
+
+// Pagination
+$(document).ready(function () {
+// Détection du clic sur un élément de pagination
+$('.pagination a').on('click', function (e) {
+e.preventDefault(); // Empêche le comportement par défaut des liens
+
+// Récupère le texte de la page cliquée
+var page = $(this).text().trim(); // Utilisation de .trim() pour éviter les espaces accidentels
+
+// Change le contenu du jumbotron en fonction de la page cliquée
+if (page === "1") {
+    $('#ava').html(`
+        <h2>Bonjour, monde!</h2>
+        <p>Il existe plusieurs visions du terme :</p>
+        <ul>
+            <li>Le monde est la matière, l'espace et les phénomènes qui nous sont accessibles par les sens, l'expérience ou la raison.</li>
+            <li>Le sens le plus courant désigne notre planète, la Terre, avec ses habitants, et son environnement plus ou moins naturel.</li>
+        </ul><br>
+        <p>Le sens étendu désigne l'univers dans son ensemble.</p>
+        <button class="btn reboot-btn">Rebooter le Monde</button>
+        `);
+} else if (page === "2") {
+    $('#ava').html(`
+        <h2>The Witcher :</h2>
+        <p>Geralt de Riv, un chasseur de monstres professionnel à gages, également connu sous le nom de sorceleur, lutte pour conserver son humanité dans un monde médiéval fantastique et sombre gouverné par des rois, des reines et des mages corrompus, où la pauvreté, la violence et l'intolérance sont omniprésentes, où les humains normaux sont parfois pires que les vrais monstres et où la plupart des emplois bien payés impliquent les émotions et les désirs humains les plus sombres.</p><br>
+        `);
+} else if (page === "3") {
+    $('#ava').html(`
+        <h2>Star Wars :</h2>
+        <p>La République galactique a été fondée pour amener la paix dans la galaxie, mais, tout au long de son existence, elle a été secouée par des sécessions et des guerres, notamment contre l'Empire Sith. Les chevaliers Jedi, gardiens de la paix et de la justice, réussissent à éliminer les Sith et la galaxie retrouve la prospérité. Cependant, après des millénaires d'existence, la République montre de lourdes failles ainsi qu'une corruption rampante, et se trouve de fait fragilisée ; selon une prophétie Jedi, un « Élu » naîtra et rétablira un jour l'équilibre dans la Force.</p><br>
+        `);
+}
+
+// Optionnel : pour s'assurer que la pagination conserve le focus visuel sur la page active
+$('.pagination a').removeClass('active'); // Enlève la classe active de tous les liens
+$(this).addClass('active'); // Ajoute la classe active au lien cliqué
+});
+});
+
+$(document).ready(function () {
+            // Gestion du bouton "Rebooter le Monde"
+            $(document).on('click', '.reboot-btn', function() {
+                const quotes = [
+                    "Blade Runner :<br><br>J'ai vu tant de choses que vous, humains, ne pourriez pas croire. Tous ces moments se perdront dans l\'oubli, comme les larmes dans la pluie.<br>C\'est l\'heure de mourir.<br>La lumière qui brûle deux fois plus fort brûle deux fois moins longtemps.<br>Qu'est-ce qu'une tortue de terre fait dans un désert?"
+                ];
+                const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+                $('#ava').html(`<h5 id="citation">${randomQuote}</h5>`);
+            });
+
+            // Pagination
+            $('.pagination a').on('click', function (e) {
+                e.preventDefault(); // Empêche le comportement par défaut des liens
+                const page = $(this).text().trim();
+                if (page === "1") {
+                    $('#ava').html(`
+                        <h2>Bonjour, monde!</h2>
+                        <p>Il existe plusieurs visions du terme :</p>
+                        <ul>
+                            <li>Le monde est la matière, l'espace et les phénomènes qui nous sont accessibles par les sens, l'expérience ou la raison.</li>
+                            <li>Le sens le plus courant désigne notre planète, la Terre, avec ses habitants, et son environnement plus ou moins naturel.</li>
+                        </ul><br>
+                        <p>Le sens étendu désigne l'univers dans son ensemble.</p>
+                        <button class="btn reboot-btn">Rebooter le Monde</button>
+                    `);
+                } else if (page === "2") {
+                    $('#ava').html(`
+                        <h2>The Witcher :</h2>
+                        <p>Geralt de Riv, un chasseur de monstres professionnel à gages, également connu sous le nom de sorceleur, lutte pour conserver son humanité dans un monde médiéval fantastique et sombre gouverné par des rois, des reines et des mages corrompus, où la pauvreté, la violence et l'intolérance sont omniprésentes, où les humains normaux sont parfois pires que les vrais monstres et où la plupart des emplois bien payés impliquent les émotions et les désirs humains les plus sombres.</p><br>
+                    `);
+                } else if (page === "3") {
+                    $('#ava').html(`
+                        <h2>Star Wars :</h2>
+                        <p>La République galactique a été fondée pour amener la paix dans la galaxie, mais, tout au long de son existence, elle a été secouée par des sécessions et des guerres, notamment contre l'Empire Sith. Les chevaliers Jedi, gardiens de la paix et de la justice, réussissent à éliminer les Sith et la galaxie retrouve la prospérité. Cependant, après des millénaires d'existence, la République montre de lourdes failles ainsi qu'une corruption rampante, et se trouve de fait fragilisée ; selon une prophétie Jedi, un « Élu » naîtra et rétablira un jour l'équilibre dans la Force.</p><br>
+                    `);
+                }
+            });
+        });
 
     </script>
 </body>

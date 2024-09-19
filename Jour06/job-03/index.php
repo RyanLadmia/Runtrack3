@@ -16,26 +16,26 @@
         </div>
         <!-- Ligne 2 -->
         <div class="row">
-            <div class="col-lg-4 col-12 block"></div>
-            <div class="col-lg-4 col-12 block"></div>
-            <div class="col-lg-4 col-12 block"></div>
+            <div class="col-lg-4 col-12 block" id="B"></div>
+            <div class="col-lg-4 col-12 block" id="C"></div>
+            <div class="col-lg-4 col-12 block"id="D"></div>
         </div>
         <!-- Ligne 3 -->
         <div class="row">
-            <div class="col-lg-8 col-12 block"></div>
-            <div class="col-lg-4 col-12 block"></div>
+            <div class="col-lg-8 col-12 block" id="E"></div>
+            <div class="col-lg-4 col-12 block" id="F"></div>
         </div>
         <!-- Ligne 4 -->
         <div class="row">
-            <div class="col-lg-2 col-2 block"></div>
+            <div class="col-lg-2 col-2 block" id="G"></div>
         </div>
         <!-- Ligne 5 -->
         <div class="row justify-content-center">
-            <div class="col-lg-2 col-2 block"></div>
+            <div class="col-lg-2 col-2 block" id="H"></div>
         </div>
         <!-- Ligne 6 -->
         <div class="row justify-content-end">
-            <div class="col-lg-2 col-2 block"></div>
+            <div class="col-lg-2 col-2 block" id="I"></div>
         </div>
     </div>
 

@@ -5,3 +5,41 @@
     margin: 10px 0;
 }
 
+
+
+@media screen and (max-width: 768px) {
+    #B{
+        width: 100%;
+    }
+    #C{
+        width: 45%;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    #D{
+        width: 45%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #E{
+        width: 33%;
+        margin-left: 170px;
+    }
+    #F{
+        width: 66%;
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+    #G{
+        margin-left: 50px;
+    }
+    #H{
+        position:relative;
+        bottom: 120px;
+    }
+    #I{
+        position:relative;
+        bottom: 240px;
+        margin-right: 50px;
+    }
+}

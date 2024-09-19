@@ -71,7 +71,7 @@
                 <nav aria-label="Page navigation example" class="mt-3">
                     <ul class="pagination justify-content-center">
                         <li class="page-item">
-                            <a class="page-link" href="#" aria-label="First">
+                            <a class="page-link" href="#" id="firstPage" aria-label="First">
                                 <i class="bi bi-chevron-double-left"></i>
                             </a>
                         </li>
@@ -79,7 +79,7 @@
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
                         <li class="page-item"><a class="page-link" href="#">3</a></li>
                         <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Last">
+                            <a class="page-link" href="#" id="lastPage" aria-label="Last">
                                 <i class="bi bi-chevron-double-right"></i>
                             </a>
                         </li>
@@ -454,6 +454,57 @@ $(document).ready(function () {
                 }
             });
         });
+
+
+
+        $(document).ready(function () {
+    // Gestion des clics sur les flèches de pagination
+    $('#firstPage').on('click', function (e) {
+        e.preventDefault(); // Empêche le comportement par défaut du lien
+        $('#ava').html(`
+            <h2>Bonjour, monde!</h2>
+            <p>Il existe plusieurs visions du terme :</p>
+            <ul>
+                <li>Le monde est la matière, l'espace et les phénomènes qui nous sont accessibles par les sens, l'expérience ou la raison.</li>
+                <li>Le sens le plus courant désigne notre planète, la Terre, avec ses habitants, et son environnement plus ou moins naturel.</li>
+            </ul><br>
+            <p>Le sens étendu désigne l'univers dans son ensemble.</p>
+            <button class="btn reboot-btn">Rebooter le Monde</button>
+        `);
+    });
+
+    $('#lastPage').on('click', function (e) {
+        e.preventDefault(); // Empêche le comportement par défaut du lien
+        $('#ava').html(`
+            <h2>Star Wars :</h2>
+            <p>La République galactique a été fondée pour amener la paix dans la galaxie, mais, tout au long de son existence, elle a été secouée par des sécessions et des guerres, notamment contre l'Empire Sith. Les chevaliers Jedi, gardiens de la paix et de la justice, réussissent à éliminer les Sith et la galaxie retrouve la prospérité. Cependant, après des millénaires d'existence, la République montre de lourdes failles ainsi qu'une corruption rampante, et se trouve de fait fragilisée ; selon une prophétie Jedi, un « Élu » naîtra et rétablira un jour l'équilibre dans la Force.</p><br>
+        `);
+    });
+
+    // Gestion des autres pages
+    $('.pagination a').on('click', function (e) {
+        e.preventDefault(); // Empêche le comportement par défaut des liens
+        const page = $(this).text().trim();
+        if (page === "1") {
+            $('#ava').html(`
+                <h2>Bonjour, monde!</h2>
+                <p>Il existe plusieurs visions du terme :</p>
+                <ul>
+                    <li>Le monde est la matière, l'espace et les phénomènes qui nous sont accessibles par les sens, l'expérience ou la raison.</li>
+                    <li>Le sens le plus courant désigne notre planète, la Terre, avec ses habitants, et son environnement plus ou moins naturel.</li>
+                </ul><br>
+                <p>Le sens étendu désigne l'univers dans son ensemble.</p>
+                <button class="btn reboot-btn">Rebooter le Monde</button>
+            `);
+        } else if (page === "2") {
+            $('#ava').html(`
+                <h2>The Witcher :</h2>
+                <p>Geralt de Riv, un chasseur de monstres professionnel à gages, également connu sous le nom de sorceleur, lutte pour conserver son humanité dans un monde médiéval fantastique et sombre gouverné par des rois, des reines et des mages corrompus, où la pauvreté, la violence et l'intolérance sont omniprésentes, où les humains normaux sont parfois pires que les vrais monstres et où la plupart des emplois bien payés impliquent les émotions et les désirs humains les plus sombres.</p><br>
+            `);
+        }
+    });
+});
+
 
     </script>
 </body>

@@ -185,6 +185,24 @@
         </div>
     </div>
 
+    <!-- Modale cachée (affichée lors de la combinaison de touches) -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="infoModalLabel">Récapitulatif des informations</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="recapLogin"></p>
+                            <p id="recapPassword"></p>
+                            <p id="recapCrypto"></p>
+                            <p id="recapUrl"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
     <!-- Modale de confirmation d'achat -->
     <div class="modal fade" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -202,6 +220,28 @@
             </div>
         </div>
     </div>
+
+
+     <!-- Modale d g c -->
+     <div class="modal fade" id="formSummaryModal" tabindex="-1" aria-labelledby="formSummaryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="formSummaryModalLabel">Récapitulatif du formulaire</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Contenu du récapitulatif sera injecté ici -->
+                    <p id="formSummaryContent"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <script>
         // Utilisation de jQuery pour rediriger le lien "Accueil"
@@ -258,6 +298,74 @@
             $('#listGroup .list-group-item').removeClass('active');
             $(this).addClass('active');
         });
+
+
+        
+
+         // Fonction pour détecter la séquence de touches D, G, C
+         let sequence = [];
+        document.addEventListener('keydown', function(event) {
+            const key = event.key.toUpperCase();
+            sequence.push(key);
+            if (sequence.slice(-3).join('') === 'DGC') {
+                // Récupérer les informations du formulaire
+                const login = document.getElementById('login').value;
+                const password = document.getElementById('password').value;
+                const crypto = document.getElementById('crypto').value;
+                const url = document.getElementById('url').value;
+
+                // Afficher les informations dans la modale
+                document.getElementById('recapLogin').innerText = 'Login: ' + login;
+                document.getElementById('recapPassword').innerText = 'Mot de passe: ' + password;
+                document.getElementById('recapCrypto').innerText = 'DogeCoin: ' + crypto;
+                document.getElementById('recapUrl').innerText = 'URL: ' + url;
+
+                // Afficher la modale Bootstrap
+                const infoModal = new bootstrap.Modal(document.getElementById('infoModal'));
+                infoModal.show();
+
+                // Réinitialiser la séquence
+                sequence = [];
+            }
+        });
+
+
+        // Variables pour suivre les touches pressées
+let keysPressed = {};
+
+// Détection des touches "D", "G" et "C"
+document.addEventListener("keydown", function (e) {
+    keysPressed[e.key.toLowerCase()] = true;
+
+    // Vérifie si les touches D, G et C sont toutes pressées en même temps
+    if (keysPressed['d'] && keysPressed['g'] && keysPressed['c']) {
+        // Affiche la modale avec le récapitulatif du formulaire
+        let login = document.getElementById("login").value;
+        let password = document.getElementById("password").value;
+        let crypto = document.getElementById("crypto").value;
+        let url = document.getElementById("url").value;
+        let email = document.getElementById("email").value;
+
+        let summaryContent = `
+            <strong>Login:</strong> ${login} <br>
+            <strong>Mot de passe:</strong> ${password} <br>
+            <strong>Cryptomonnaie:</strong> ${crypto} <br>
+            <strong>URL:</strong> ${url} <br>
+            <strong>Email:</strong> ${email} <br>
+        `;
+        
+        document.getElementById("formSummaryContent").innerHTML = summaryContent;
+        
+        let modal = new bootstrap.Modal(document.getElementById('formSummaryModal'));
+        modal.show();
+    }
+});
+
+// Réinitialisation des touches quand elles sont relâchées
+document.addEventListener("keyup", function (e) {
+    keysPressed[e.key.toLowerCase()] = false;
+});
+
     </script>
 </body>
 </html>

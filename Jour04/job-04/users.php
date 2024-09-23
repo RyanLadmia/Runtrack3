@@ -1,11 +1,10 @@
 <?php
-// users.php
 
-// Paramètres de connexion
+// Variables :
 $host = 'localhost';
-$db = 'utilisateurs'; // Nom de la base de données
-$user = 'root'; // Nom d'utilisateur MySQL
-$pass = ''; // Mot de passe MySQL (souvent vide en local)
+$db = 'utilisateurs'; 
+$user = 'root'; 
+$pass = ''; 
 
 try {
     // Connexion à la base de données avec PDO

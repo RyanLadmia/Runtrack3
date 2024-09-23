@@ -16,47 +16,23 @@ document.addEventListener('DOMContentLoaded', function () {
         const adress = document.getElementById('adress').value.trim();
         const zipcode = document.getElementById('zipcode').value.trim();
 
-        // Validation des champs
-        let valid = true;
+        // Tableau des vérifications
+        const validations = [];
 
-        if (!lastname) {
-            document.getElementById('lastnameError').textContent = "Le nom est requis.";
-            valid = false;
-        }
+        validations.push(validateField(lastname, 'lastnameError', "Le nom est requis."));
+        validations.push(validateField(firstname, 'firstnameError', "Le prénom est requis."));
+        validations.push(validateEmailAsync(email));
+        validations.push(validatePassword(password, confirmPassword));
+        validations.push(validateField(adress, 'adressError', "L'adresse est requise."));
+        validations.push(validateZipcode(zipcode));
 
-        if (!firstname) {
-            document.getElementById('firstnameError').textContent = "Le prénom est requis.";
-            valid = false;
-        }
-
-        if (!validateEmail(email)) {
-            document.getElementById('emailError').textContent = "L'email n'est pas valide.";
-            valid = false;
-        }
-
-        if (password.length < 6) {
-            document.getElementById('passwordError').textContent = "Le mot de passe doit contenir au moins 6 caractères.";
-            valid = false;
-        }
-
-        if (password !== confirmPassword) {
-            document.getElementById('confirmPasswordError').textContent = "Les mots de passe ne correspondent pas.";
-            valid = false;
-        }
-
-        if (!adress) {
-            document.getElementById('adressError').textContent = "L'adresse est requise.";
-            valid = false;
-        }
-
-        if (!zipcode || zipcode.length !== 5) {
-            document.getElementById('zipcodeError').textContent = "Le code postal doit contenir 5 chiffres.";
-            valid = false;
-        }
+        // Attendre toutes les validations
+        const results = await Promise.all(validations);
+        const valid = results.every(result => result === true);
 
         if (valid) {
             try {
-                // Appel API pour vérifier si l'email existe déjà
+                // Vérification de l'email via l'API
                 const response = await fetch('/check-email.php', {
                     method: 'POST',
                     headers: {
@@ -78,12 +54,48 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    function validateEmail(email) {
+    async function validateField(value, errorId, errorMessage) {
+        if (!value) {
+            document.getElementById(errorId).textContent = errorMessage;
+            return false;
+        }
+        return true;
+    }
+
+    async function validateEmailAsync(email) {
+        if (!validateEmail(email)) {
+            document.getElementById('emailError').textContent = "L'email n'est pas valide.";
+            return false;
+        }
+        return true;
+    }
+
+    async function validatePassword(password, confirmPassword) {
+        if (password.length < 6) {
+            document.getElementById('passwordError').textContent = "Le mot de passe doit contenir au moins 6 caractères.";
+            return false;
+        }
+        if (password !== confirmPassword) {
+            document.getElementById('confirmPasswordError').textContent = "Les mots de passe ne correspondent pas.";
+            return false;
+        }
+        return true;
+    }
+
+    async function validateZipcode(zipcode) {
+        if (!zipcode || zipcode.length !== 5) {
+            document.getElementById('zipcodeError').textContent = "Le code postal doit contenir 5 chiffres.";
+            return false;
+        }
+        return true;
+    }
+
+    async function validateEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
     }
 
-    function resetErrors() {
+    async function resetErrors() {
         const errors = document.querySelectorAll('.error');
         errors.forEach(error => error.textContent = '');
     }

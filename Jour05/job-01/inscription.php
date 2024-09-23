@@ -17,12 +17,12 @@
         <input type="text" id="lastname" name="lastname"><br>
         <span class="error" id="lastnameError"></span><br><br>
 
-        <label for="prenom">Prenom</label><br>
+        <label for="firstname">Prenom</label><br>
         <input type="text" id="firstname" name="firstname"><br>
         <span class="error" id="firstnameError"></span><br><br>
 
         <label for="email">E-mail</label><br>
-        <input type="email" id="email" name="email"><br>
+        <input type="email" id="email" name="email" autocomplete="off"><br>
         <span class="error" id="emailError"></span><br><br>
 
         <label for="password">Mot de passe</label><br>

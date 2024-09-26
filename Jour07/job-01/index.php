@@ -127,10 +127,10 @@
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Links</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  <li><a class="grey-text text-lighten-3" href="index.php">Accueil</a></li>
+                  <li><a class="grey-text text-lighten-3" href="index.php">Connexion</a></li>
+                  <li><a class="grey-text text-lighten-3" href="index.php">Inscription</a></li>
+                  <li><a class="grey-text text-lighten-3" href="index.php">Recherche</a></li>
                 </ul>
               </div>
             </div>

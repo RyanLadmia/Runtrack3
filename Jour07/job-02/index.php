@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
     <!-- Font Awesome for icons (optional) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <title>Job 01</title>
+    <title>Job 02</title>
 </head>
 
 <body>
@@ -26,7 +26,7 @@
     </header>
     <main>
         <section>
-            <div class="container">
+            <div>
                 <h5>Création de Compte</h5>
 
                 <form action="#">
@@ -52,34 +52,34 @@
                         </p>
 
                     <!-- Inputs de type text pour prénom, nom et adresse -->
-                    <div class="input-field">
+                    <div>
                         <input type="text" id="prenom" required>
                         <label for="prenom">Prénom</label>
                     </div>
     
-                    <div class="input-field">
+                    <div>
                         <input type="text" id="nom" required>
                         <label for="nom">Nom</label>
                     </div>
     
-                    <div class="input-field">
+                    <div>
                         <input type="text" id="adresse" required>
                         <label for="adresse">Adresse</label>
                     </div>
 
                     <!-- Input de type email -->
-                    <div class="input-field">
+                    <div>
                         <input type="email" id="email" required>
                         <label for="email">Adresse Email</label>
                     </div>
 
                     <!-- Inputs de type password -->
-                    <div class="input-field">
+                    <div>
                         <input type="password" id="motdepasse" required>
                         <label for="motdepasse">Mot de passe</label>
                     </div>
     
-                    <div class="input-field">
+                    <div>
                         <input type="password" id="validationMotdepasse" required>
                         <label for="validationMotdepasse">Validation du mot de passe</label>
                     </div>
@@ -112,21 +112,21 @@
                         </p>
 
                     <!-- Bouton pour valider le formulaire -->
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Valider</button>
+                    <button type="submit" name="action">Valider</button>
                 </form>
             </div><br>
         </section>
     </main>
     
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+    <footer>
+        <div>
+            <div>
+              <div>
+                <h5>Footer Content</h5>
+                <p>You can use rows and columns here to organize your footer content.</p>
               </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
+              <div>
+                <h5>Links</h5>
                 <ul>
                   <li><a class="grey-text text-lighten-3" href="index.php">Accueil</a></li>
                   <li><a class="grey-text text-lighten-3" href="index.php">Connexion</a></li>
@@ -136,10 +136,10 @@
               </div>
             </div>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
+        <div>
+            <div>
             © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="index.php">More Links</a>
+            <a href="index.php">More Links</a>
             </div>
         </div>
     </footer>

@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job 01</title>
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons (optional) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Job 03</title>
 </head>
 
 <body>
@@ -22,7 +26,7 @@
     </header>
     <main>
         <section>
-            <div class="container">
+            <div>
                 <h5>Création de Compte</h5>
 
                 <form action="#">
@@ -48,34 +52,34 @@
                         </p>
 
                     <!-- Inputs de type text pour prénom, nom et adresse -->
-                    <div class="input-field">
+                    <div>
                         <input type="text" id="prenom" required>
                         <label for="prenom">Prénom</label>
                     </div>
     
-                    <div class="input-field">
+                    <div>
                         <input type="text" id="nom" required>
                         <label for="nom">Nom</label>
                     </div>
     
-                    <div class="input-field">
+                    <div>
                         <input type="text" id="adresse" required>
                         <label for="adresse">Adresse</label>
                     </div>
 
                     <!-- Input de type email -->
-                    <div class="input-field">
+                    <div>
                         <input type="email" id="email" required>
                         <label for="email">Adresse Email</label>
                     </div>
 
                     <!-- Inputs de type password -->
-                    <div class="input-field">
+                    <div>
                         <input type="password" id="motdepasse" required>
                         <label for="motdepasse">Mot de passe</label>
                     </div>
     
-                    <div class="input-field">
+                    <div>
                         <input type="password" id="validationMotdepasse" required>
                         <label for="validationMotdepasse">Validation du mot de passe</label>
                     </div>
@@ -108,14 +112,14 @@
                         </p>
 
                     <!-- Bouton pour valider le formulaire -->
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Valider</button>
+                    <button type="submit" name="action">Valider</button>
                 </form>
             </div><br>
         </section>
     </main>
     
     <footer class="page-footer">
-        <div class="container">
+          <div class="container">
             <div class="row">
               <div class="col l6 s12">
                 <h5 class="white-text">Footer Content</h5>
@@ -131,14 +135,14 @@
                 </ul>
               </div>
             </div>
-        </div>
-        <div class="footer-copyright">
+          </div>
+          <div class="footer-copyright">
             <div class="container">
             © 2014 Copyright Text
             <a class="grey-text text-lighten-4 right" href="index.php">More Links</a>
             </div>
-        </div>
-    </footer>
+          </div>
+        </footer>
             
 
 

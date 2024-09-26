@@ -111,9 +111,9 @@
                         </p>
 
                     <!-- Bouton pour valider le formulaire -->
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Créer un compte</button>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Valider</button>
                 </form>
-            </div>
+            </div><br>
         </section>
     </main>
     

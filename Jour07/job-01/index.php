@@ -31,7 +31,7 @@
 
                 <form action="#">
                     <!-- Inputs radios pour la civilité -->
-                    <h6>Civilité</h6>
+                    <h6>Civilité :</h6>
                         <p>
                             <label>
                             <input name="civilite" type="radio" value="monsieur" checked />

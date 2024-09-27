@@ -138,15 +138,13 @@
         </div>
         <div>
             <div>
-            © 2014 Copyright Text
+            © 2024 Copyright
             <a href="index.php">More Links</a>
             </div>
         </div>
     </footer>
             
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 
 </html>

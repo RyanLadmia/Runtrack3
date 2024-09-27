@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job 01</title>
 </head>
-
 <body>
     <header>
         <nav>
-            <div class="nav-wrapper">
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <div>
+                <ul>
                     <li><a href="index.php">Accueil</a></li>
                     <li><a href="index.php">Connexion</a></li>
                     <li><a href="index.php">Inscription</a></li>
@@ -22,9 +20,8 @@
     </header>
     <main>
         <section>
-            <div class="container">
+            <div>
                 <h5>Création de Compte</h5>
-
                 <form action="#">
                     <!-- Inputs radios pour la civilité -->
                     <h6>Civilité :</h6>
@@ -46,40 +43,33 @@
                             <span>Autre</span>
                             </label>
                         </p>
-
                     <!-- Inputs de type text pour prénom, nom et adresse -->
-                    <div class="input-field">
+                    <div>
                         <input type="text" id="prenom" required>
                         <label for="prenom">Prénom</label>
                     </div>
-    
-                    <div class="input-field">
+                    <div>
                         <input type="text" id="nom" required>
                         <label for="nom">Nom</label>
                     </div>
-    
-                    <div class="input-field">
+                    <div>
                         <input type="text" id="adresse" required>
                         <label for="adresse">Adresse</label>
                     </div>
-
                     <!-- Input de type email -->
-                    <div class="input-field">
+                    <div>
                         <input type="email" id="email" required>
                         <label for="email">Adresse Email</label>
                     </div>
-
                     <!-- Inputs de type password -->
-                    <div class="input-field">
+                    <div>
                         <input type="password" id="motdepasse" required>
                         <label for="motdepasse">Mot de passe</label>
                     </div>
-    
-                    <div class="input-field">
+                    <div>
                         <input type="password" id="validationMotdepasse" required>
                         <label for="validationMotdepasse">Validation du mot de passe</label>
                     </div>
-
                     <!-- Checkboxes pour choisir ses passions -->
                     <h6>Passions</h6>
                         <p>
@@ -106,44 +96,36 @@
                             <span>Lecture</span>
                             </label>
                         </p>
-
                     <!-- Bouton pour valider le formulaire -->
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Valider</button>
+                    <button type="submit" name="action">Valider</button>
                 </form>
             </div><br>
         </section>
     </main>
-    
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+    <footer>
+        <div>
+            <div>
+              <div>
+                <h5>Footer Content</h5>
+                <p>You can use rows and columns here to organize your footer content.</p>
               </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
+              <div>
+                <h5>Links</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="index.php">Accueil</a></li>
-                  <li><a class="grey-text text-lighten-3" href="index.php">Connexion</a></li>
-                  <li><a class="grey-text text-lighten-3" href="index.php">Inscription</a></li>
-                  <li><a class="grey-text text-lighten-3" href="index.php">Recherche</a></li>
+                  <li><a href="index.php">Accueil</a></li>
+                  <li><a href="index.php">Connexion</a></li>
+                  <li><a href="index.php">Inscription</a></li>
+                  <li><a href="index.php">Recherche</a></li>
                 </ul>
               </div>
             </div>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
+        <div>
+            <div>
             © 2024 Copyright
-            <a class="grey-text text-lighten-4 right" href="index.php">More Links</a>
+            <a href="index.php">More Links</a>
             </div>
         </div>
     </footer>
-            
-
 </body>
-
 </html>
-
-
-                    RETIRER LES CLASSES ET ID DE TOUT LE DOC !!
